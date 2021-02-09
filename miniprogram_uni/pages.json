@@ -1,0 +1,84 @@
+{
+	"pages": [
+		{
+			"path": "pages/portal/index",
+			"style": {
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {}
+		},
+		{
+			"path": "pages/menu/menu",
+			"style": {
+				"navigationBarTitleText": "诗词分类"
+			}
+		},
+		{
+			"path": "pages/find/find",
+			"style": {
+				"navigationBarTitleText": "发现"
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {}
+		},
+		{
+			"path": "pages/list/list",
+			"style": {}
+		},
+		{
+			"path": "pages/detail/detail",
+			"style": {}
+		}
+	],
+	"tabBar": {
+		"color": "#6e6d6b",
+		"selectedColor": "#FF6262",
+		"borderStyle": "white",
+		"backgroundColor": "#fff",
+		"list": [
+			{
+				"pagePath": "pages/portal/index",
+				"iconPath": "/static/images/nav/index.png",
+				"selectedIconPath": "/static/images/nav/index-active.png",
+				"text": "推荐"
+			},
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "/static/images/nav/index.png",
+				"selectedIconPath": "/static/images/nav/index-active.png",
+				"text": "推荐"
+			},
+			{
+				"pagePath": "pages/menu/menu",
+				"iconPath": "/static/images/nav/menu.png",
+				"selectedIconPath": "/static/images/nav/menu-active.png",
+				"text": "诗词"
+			},
+			{
+				"pagePath": "pages/find/find",
+				"iconPath": "/static/images/nav/find.png",
+				"selectedIconPath": "/static/images/nav/find-active.png",
+				"text": "好玩"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"iconPath": "/static/images/nav/user.png",
+				"selectedIconPath": "/static/images/nav/user-active.png",
+				"text": "我的"
+			}
+		]
+	},
+	"sitemapLocation": "sitemap.json",
+	"globalStyle": {
+		"backgroundColor": "#F6F6F6",
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#FF6262",
+		"navigationBarTitleText": "minAPP",
+		"navigationBarTextStyle": "white"
+	},
+	"subPackages": []
+}

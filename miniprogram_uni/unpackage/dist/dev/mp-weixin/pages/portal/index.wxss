@@ -1,0 +1,202 @@
+
+.poem_author {
+    text-align: right;
+    margin: 0 auto;
+    float: left;
+    margin-left: 10%;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: tb-lr;
+    writing-mode: tb-lr;
+    height: 100%;
+    letter-spacing: 6rpx;
+}
+.center {
+    position: fixed;
+    top: 50%;
+    left: 48%;
+    width: 80%;
+    height: 80%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+}
+.container{
+  height:100%;
+  width:100%;
+  background: url('https://jkfan.cn/uploads/image/2021/February/8/88dRjBqn.jpg');
+  background-size:cover;
+}
+.poet_one{
+  margin: 0 auto;  
+  float:left;
+  -webkit-writing-mode: vertical-lr;
+          writing-mode: vertical-lr;/*从左向右 从右向左是 writing-mode: vertical-rl;*/  
+  -webkit-writing-mode: tb-lr;  
+          writing-mode: tb-lr;/*IE浏览器的从左向右 从右向左是 writing-mode: tb-rl；*/  
+  line-height: 100rpx;
+  letter-spacing: 6rpx;
+  margin: 0 auto;
+  text-align: center;
+  /* text-align-last: justify; */
+  height: 100%;
+  width: 100%;
+}
+.sentence_one {
+    padding: 30rpx 20rpx;
+    background: rgba(255,255,255,0.8);
+    height: 80%;
+    width: 80%;
+    text-align: center;
+    font-size: 40rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    overflow: hidden;
+    color: #333;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+}
+.command {
+  height: 320rpx;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.command navigator {
+  background: -webkit-linear-gradient(#FF6262, #e83524);
+  background: linear-gradient(#FF6262, #e83524);
+  /* border: 1px solid #fff; */
+  box-shadow: 1px 1px 5px #720202;
+  border-radius: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  height: 180rpx;
+  width: 15%;
+  font-size: 30rpx;
+}
+.command navigator image {
+  height: 80%;
+}
+.sentence {
+  margin: 40rpx 30rpx;
+}
+.sentence .title {
+  font-size: 36rpx;
+  text-align: center;
+  display: block;
+  color: #ff6666;
+}
+.sentence view {
+  padding: 30rpx 20rpx;
+  margin-top: 24rpx;
+  background: #fff;
+  height: 140rpx;
+  font-size: 28rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  color: #333;
+}
+.sentence view .poet {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  color: #555;
+}
+.sentence view .name {
+  text-align: right;
+}
+.choiceness {
+  margin: 40rpx 30rpx;
+}
+.choiceness .title {
+  font-size: 36rpx;
+  text-align: center;
+  display: block;
+  color: #ff6666;
+}
+.choiceness view.box {
+  padding: 30rpx 20rpx;
+  margin-top: 24rpx;
+  background: #fff;
+  height: 180rpx;
+  font-size: 28rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  color: #333;
+}
+.choiceness view.box .poet {
+  text-overflow: -o-ellipsis-lastline;
+  height:46%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  color: #666;
+}
+.choiceness view.box .name-like {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.choiceness view.box .name-like .name {
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.choiceness view.box .name-like .like {
+  font-size: 24rpx;
+  color: #f77373;
+}
+.choiceness view.box .name-like .like ._i {
+  color: #ff6666;
+}
+
+
+

@@ -1,0 +1,139 @@
+
+.command {
+  height: 320rpx;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.command navigator {
+  background: -webkit-linear-gradient(#FF6262, #e83524);
+  background: linear-gradient(#FF6262, #e83524);
+  /* border: 1px solid #fff; */
+  box-shadow: 1px 1px 5px #720202;
+  border-radius: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  height: 180rpx;
+  width: 15%;
+  font-size: 30rpx;
+}
+.command navigator image {
+  height: 80%;
+}
+.sentence {
+  margin: 40rpx 30rpx;
+}
+.sentence .title {
+  font-size: 36rpx;
+  text-align: center;
+  display: block;
+  color: #ff6666;
+}
+.sentence view {
+  padding: 30rpx 20rpx;
+  margin-top: 24rpx;
+  background: #fff;
+  height: 140rpx;
+  font-size: 28rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  color: #333;
+}
+.sentence view .poet {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  color: #555;
+}
+.sentence view .name {
+  text-align: right;
+}
+.choiceness {
+  margin: 40rpx 30rpx;
+}
+.choiceness .title {
+  font-size: 36rpx;
+  text-align: center;
+  display: block;
+  color: #ff6666;
+}
+.choiceness view.box {
+  padding: 30rpx 20rpx;
+  margin-top: 24rpx;
+  background: #fff;
+  height: 180rpx;
+  font-size: 28rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  color: #333;
+}
+.choiceness view.box .poet {
+  text-overflow: -o-ellipsis-lastline;
+  height:46%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  color: #666;
+}
+.choiceness view.box .name-like {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.choiceness view.box .name-like .name {
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.choiceness view.box .name-like .like {
+  font-size: 24rpx;
+  color: #f77373;
+}
+.choiceness view.box .name-like .like ._i {
+  color: #ff6666;
+}
+
+
+
