@@ -6,6 +6,11 @@
 			}
 		},
 		{
+			"path": "pages/tantan/index",
+			"style": {
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {}
 		},
@@ -47,10 +52,10 @@
 				"text": "推荐"
 			},
 			{
-				"pagePath": "pages/index/index",
+				"pagePath": "pages/tantan/index",
 				"iconPath": "/static/images/nav/index.png",
 				"selectedIconPath": "/static/images/nav/index-active.png",
-				"text": "推荐"
+				"text": "探探"
 			},
 			{
 				"pagePath": "pages/menu/menu",

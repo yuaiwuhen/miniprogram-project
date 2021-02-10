@@ -1,1 +1,0 @@
-<view class="container"><view class="sentence_one center"><block wx:if="{{sentence._id}}"><view data-id="{{sentence._id}}" data-event-opts="{{[['tap',[['goDetail',['$event']]]]]}}" bindtap="__e"><text class="poet_one">{{sentence.cont}}</text><text class="poem_author">{{sentence.name+" - "+sentence.dynasty+" "+sentence.poet}}</text></view></block></view></view>
