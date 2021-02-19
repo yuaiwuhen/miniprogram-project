@@ -1,12 +1,12 @@
 {
 	"pages": [
 		{
-			"path": "pages/portal/index",
+			"path": "pages/tantan/index",
 			"style": {
 			}
 		},
 		{
-			"path": "pages/tantan/index",
+			"path": "pages/portal/index",
 			"style": {
 			}
 		},
@@ -46,16 +46,16 @@
 		"backgroundColor": "#fff",
 		"list": [
 			{
-				"pagePath": "pages/portal/index",
-				"iconPath": "/static/images/nav/index.png",
-				"selectedIconPath": "/static/images/nav/index-active.png",
-				"text": "推荐"
-			},
-			{
 				"pagePath": "pages/tantan/index",
 				"iconPath": "/static/images/nav/index.png",
 				"selectedIconPath": "/static/images/nav/index-active.png",
 				"text": "探探"
+			},
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "/static/images/nav/index.png",
+				"selectedIconPath": "/static/images/nav/index-active.png",
+				"text": "推荐"
 			},
 			{
 				"pagePath": "pages/menu/menu",
@@ -81,9 +81,9 @@
 	"globalStyle": {
 		"backgroundColor": "#F6F6F6",
 		"backgroundTextStyle": "light",
-		"navigationBarBackgroundColor": "#FF6262",
+		"navigationBarBackgroundColor": "#F5F5F5",
 		"navigationBarTitleText": "minAPP",
-		"navigationBarTextStyle": "white"
+		"navigationBarTextStyle": "black"
 	},
 	"subPackages": []
 }

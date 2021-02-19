@@ -7,7 +7,7 @@
 					class="move-view"
 					v-for="(item,index) in dataList"
 					:key="item.id"
-					:style="{zIndex:`${99999-item.id}`}"
+					:style="{zIndex:`${99999-index}`}"
 					direction="all"
 					:x="item.moveX"
 					:y="item.moveY"
@@ -25,8 +25,8 @@
 						:style="{transform:index<number?`rotate(${rotate*index}deg) scale(${ 1-(1-scale.x)*index },${ 1-(1-scale.y)*index }) skew(${skew.x*index}deg, ${skew.y*index}deg) translate(${translate.x*index}px, ${translate.y*index}px)`:`rotate(${rotate*(number-1)}deg) scale(${ 1-(1-scale.x)*(number-1) },${ 1-(1-scale.y)*(number-1) }) skew(${skew.x*(number-1)}deg, ${skew.y*(number-1)}deg) translate(${translate.x*(number-1)}px, ${translate.y*(number-1)}px)`,opacity:index<number?`${ 1-(1-opacity)*index }`:`${ 1-(1-opacity)*(number-1) }`}"
 						
 					>
-						<card-box :cont="item.cont" :id="item.id" :name="item.name" 
-							:dynasty="item.dynasty" :poet="item.poet" ref="cardBox">
+						<card-box :cont="item.content" :id="item.id" :name="item.author_name" 
+							:dynasty="item.dynasty" :poet="item.title" ref="cardBox">
 						</card-box>
 					</view>
 				</movable-view>
@@ -36,18 +36,18 @@
 		<view
 			v-if="index<=number"
 			class="move-view" 
-			:key="item._id"
+			:key="item.id"
 			@touchend="touchend" 
 			@tap="tapCard(item)"
 			v-for="(item,index) in dataList"
 			@touchmove="touchMove"
 			@touchstart="touchStart"
 			:animation="animationData[index]"
-			:style="{transform:index<number?`rotate(${rotate*index}deg) scale(${ 1-(1-scale.x)*index },${ 1-(1-scale.y)*index }) skew(${skew.x*index}deg, ${skew.y*index}deg) translate(${translate.x*index}px, ${translate.y*index}px)`:`rotate(${rotate*(number-1)}deg) scale(${ 1-(1-scale.x)*(number-1) },${ 1-(1-scale.y)*(number-1) }) skew(${skew.x*(number-1)}deg, ${skew.y*(number-1)}deg) translate(${translate.x*(number-1)}px, ${translate.y*(number-1)}px)`,zIndex:`${99999-item._id}`,opacity:index<number?`${ 1-(1-opacity)*index }`:`${ 1-(1-opacity)*(number-1) }`}"
+			:style="{transform:index<number?`rotate(${rotate*index}deg) scale(${ 1-(1-scale.x)*index },${ 1-(1-scale.y)*index }) skew(${skew.x*index}deg, ${skew.y*index}deg) translate(${translate.x*index}px, ${translate.y*index}px)`:`rotate(${rotate*(number-1)}deg) scale(${ 1-(1-scale.x)*(number-1) },${ 1-(1-scale.y)*(number-1) }) skew(${skew.x*(number-1)}deg, ${skew.y*(number-1)}deg) translate(${translate.x*(number-1)}px, ${translate.y*(number-1)}px)`,zIndex:`${99999-item.id}`,opacity:index<number?`${ 1-(1-opacity)*index }`:`${ 1-(1-opacity)*(number-1) }`}"
 		>
 			<view class="cardBox">
-				<card-box :cont="item.cont" :id="item.id" :name="item.name" 
-							:dynasty="item.dynasty" :poet="item.poet" ref="cardBox">
+				<card-box :cont="item.content" :id="item.id" :name="item.author_name" 
+							:dynasty="item.dynasty" :poet="item.title" ref="cardBox">
 				</card-box>
 			</view>
 			
@@ -66,6 +66,8 @@
 <script>
 	import clCardDel from "@/components/cl-cardDel/cl-cardDel";
 	import cardBox from "./card-box";
+	import { getQuotes } from '@/api/poem.js';
+
 	export default{ 
 		mixins:[clCardDel],
 		components:{cardBox},
@@ -110,15 +112,14 @@
 			},
 			//获取数据
 			getData(){
-				let promise = new Promise((resolve,reject)=>{
-					let dataGroup = []
-					for (var i = 1; i < 6; i++) {
-						dataGroup.push({id:1,cont:'欲话毗陵君反袂，欲言夏口我沾衣。\n谁知临老相逢日，悲叹声多语笑稀。',name:'礼拜',dynasty:'唐', poet:'范德萨范德萨发'})
-					}
-					this.dataList = [...this.dataList,...dataGroup]
-					resolve()
-				}) 
-				return promise
+				getQuotes()
+				.then(res => {
+					console.log(res);
+					this.dataList = [...this.dataList,...res.data.data]
+				})
+				.catch(err => {
+					console.log(err);
+				});
 			},
 			//触摸中判断
 			moveJudge(x,y,ratio){
@@ -187,6 +188,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		background: url('https://jkfan.cn/uploads/image/2021/February/8/88dRjBqn.jpg');
+		background-size:cover;
 	}
 	.move-area{
 		position: absolute;
@@ -194,16 +197,16 @@
 	.move-view{
 		width: 600rpx;
 		position: absolute;
-		height: 900rpx;
+		height: 1100rpx;
 		left: 50%;
 		top: 50%;
 		margin-left: -300rpx;
-		margin-top: -500rpx;
+		margin-top: -550rpx;
 	}
 	.cardBox{
 		position:relative;
 		width: 600rpx;
-		height: 900rpx;
+		height: 1100rpx;
 	}
 	.love{
 		position: absolute;

@@ -10,10 +10,10 @@
 			<view class="sentence_one center">
 				<view class="poet_one">{{cont}}</view>
 				<view class="poem_author">
-				{{name}} -{{poet}}
-					<view class="label" :style="{backgroundColor:'#7BD8FF'}">
+				{{poet}} -{{name}}
+					<text class="label" :style="{backgroundColor:'#7BD8FF'}">
 						{{dynasty}}
-					</view>
+					</text>
 				</view>
 			</view>
 		</view>
@@ -134,12 +134,7 @@
     height: 80%;
     -webkit-transform: translateX(-50%) translateY(-50%);
 }
-.container{
-  height:100%;
-  width:100%;
-  background: url('https://jkfan.cn/uploads/image/2021/February/8/88dRjBqn.jpg');
-  background-size:cover;
-}
+
 .poet_one{
   margin: 0 auto;  
   float:left;
@@ -151,13 +146,15 @@
   text-align: center;
   /* text-align-last: justify; */
   height: 100%;
-  width: 100%;
+/*  width: 100%; */
+  word-break: keep-all;
 }
 .sentence_one {
+	border-radius: 20rpx;
     padding: 30rpx 20rpx;
-    background: rgba(255,255,255,0.8);
-    height: 80%;
-    width: 80%;
+    background: rgba(255,255,255,0.9);
+    height: 100%;
+    width: 100%;
     text-align: center;
     font-size: 40rpx;
     display: -webkit-box;
@@ -182,7 +179,6 @@
 	  -webkit-font-smoothing: antialiased;
 	  -moz-osx-font-smoothing: grayscale;
 	}
-	
 	
 	.icon-v:before {
 	  content: "\e670";
@@ -228,6 +224,8 @@
 		.top{
 			width: 100%;
 			height: 100%;
+			background: url('https://jkfan.cn/uploads/image/2021/February/8/88dRjBqn.jpg');
+			background-size:cover;
 			.img-top{
 				position: absolute;
 				font-size: 12px;

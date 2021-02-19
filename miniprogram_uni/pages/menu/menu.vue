@@ -16,7 +16,7 @@
       <text>{{parentItem.name}}</text>
     </view>
     <view class="classic">
-      <text v-for="(item, index) in parentItem.list" :key="index" :data-parenttags="parentItem.name" :data-tags="item" @tap="goList" v-if="index < 10 || showMore == parentIdx">{{item}}</text>
+      <text v-for="(item, index) in parentItem.list" :key="index" :data-parenttags="parentItem.type" :data-tags="item.id" @tap="goList" v-if="index < 10 || showMore == parentIdx">{{item.name}}</text>
       <block v-if="parentItem.list.length >= 10">
         <view v-if="showMore == parentIdx" class="btn" :data-parentIdx="parentIdx" @tap="foldToggle">
           收起 <i class="wx-icon-custom-shouqi"></i>
@@ -33,6 +33,7 @@
 <script>
 // miniprogram/pages/menu/menu.js
 const tagsList = require("../../lib/tags");
+import { getMenus } from '@/api/poem.js';
 
 export default {
   data() {
@@ -79,13 +80,16 @@ export default {
         title: '正在加载...',
         mask: true
       });
-      list = tagsList.tagsList;
-      this.setData({
-        list
-      });
-      setTimeout(() => {
-        uni.hideLoading();
-      }, 200);
+      getMenus()
+				.then(res => {
+					this.list = [...this.list,...res.data.data]
+					console.log(this.list);
+          uni.hideLoading();
+				})
+				.catch(err => {
+					console.log(err);
+          uni.hideLoading();
+				});
     },
 
     foldToggle(e) {

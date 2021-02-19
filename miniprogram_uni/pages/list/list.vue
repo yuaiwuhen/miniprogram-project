@@ -2,13 +2,13 @@
 <!-- miniprogram/pages/list/list.wxml -->
 <scroll-view scroll-y="true" style="height:100%;" lower-threshold="50" @scrolltolower="lower">
   <view class="choiceness">
-    <view v-for="(item, index) in list" :key="index" class="box" :data-id="item._id" @tap="goDetail">
-      <text class="title">{{item.name}}</text>
-      <text class="poet">{{item.content[0]}}{{item.content[1]}}</text>
+    <view v-for="(item, index) in list" :key="index" class="box" :data-id="item.id" @tap="goDetail">
+      <text class="title">{{item.title}}</text>
+      <text class="poet">{{item.content}}</text>
       <view class="name-like">
-        <text class="name">{{item.dynasty}} {{item.poet}}</text>
+        <text class="name">{{item.dynasty}} {{item.author_name}}</text>
         <view class="like">
-          <text>{{item.opened}} 人浏览</text>
+          <!--<text>{{item.opened}} 人浏览</text>>-->
         </view>
       </view>
     </view>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { getPoems } from '@/api/poem.js';
 
 export default {
   data() {
@@ -104,51 +105,19 @@ export default {
         } = this;
         let that = this;
         let condition = {};
-
-        switch (parenttags) {
-          case '体裁':
-            condition = {
-              type: tags
-            };
-            break;
-
-          case '朝代':
-            condition = {
-              dynasty: `[${tags}]`
-            };
-            break;
-
-          case '作者':
-            condition = {
-              poet: tags
-            };
-            break;
-
-          default:
-            condition = {
-              tags: tags
-            };
-        }
-
+        console.log(parenttags, tags)
         this.setData({
           loading: true
         });
-        uni.cloud.callFunction({
-          name: 'collection_get',
-          data: {
-            database: 'gushici',
-            page,
-            num,
-            condition
-          }
-        }).then(res => {
-          if (!res.result.data.length) {
+        getPoems({type:parenttags,id:tags}).then(res => {
+          console.log(res)
+          if (!res.data.data.length) {
             that.setData({
               loading: false,
               isOver: true
             });
           } else {
-            let res_data = res.result.data;
+            let res_data = res.data.data;
             list.push(...res_data);
             that.setData({
               list,
@@ -204,12 +173,15 @@ export default {
 
 .choiceness view.box .poet {
   text-overflow: -o-ellipsis-lastline;
-  height: 38%;
+  /* height: 38%; */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   line-clamp: 2;
   color: #666;
+  text-align:center;
+  vertical-align:middle;
+  display:table-cell;
 }
 
 .choiceness view.box .name-like {
